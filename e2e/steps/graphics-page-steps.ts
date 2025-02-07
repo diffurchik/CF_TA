@@ -1,4 +1,4 @@
-import {expect, Page} from '@playwright/test';
+import {Page} from '@playwright/test';
 import { FreeGraphicsPage } from '../pages/free-graphics-page';
 
 export class FreeGraphicsSteps {

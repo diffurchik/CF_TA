@@ -1,7 +1,6 @@
 import {test, expect} from '@playwright/test';
 import {FreeGraphicsPage} from './pages/free-graphics-page';
 import {FreeGraphicsSteps} from './steps/graphics-page-steps';
-import {ShoppingCartPage} from "./pages/shopping-cart-page";
 
 test.describe('Free Graphics Page', () => {
 
