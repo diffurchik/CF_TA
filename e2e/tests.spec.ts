@@ -10,18 +10,18 @@ test.describe('Free Graphics Page', () => {
         await steps.closeNotificationAlert()
     })
 
-    // First of all need to check monetization and that user can get needed product
+    // First of all need to check monetization and that user can get needed product (the user's very first target - get a template)
     test('user can click on the download button and redirect to a cart', async ({page}) => {
         const steps = new FreeGraphicsSteps(page)
 
         await steps.clickDownloadButton()
         await page.waitForURL('**/free-trial/')
 
-        const title = page.locator('h1:text("www.creativefabrica.com")'); // there is a captcha page between user steps so will check this page as proof that Download button is work
+        const title = page.locator('h1:text("www.creativefabrica.com")'); // there is a captcha page between user steps so will check this page as proof that Download button is work and redirect a user
         await expect(title).toBeVisible();
     });
 
-    // Information about a product is necessary to make a decision for buying
+    // Information about a product is necessary to make a purchasing decision.
     test('user can see photos and reviews of a position', async ({page}) => {
         const freePage = new FreeGraphicsPage(page)
 
@@ -38,7 +38,7 @@ test.describe('Free Graphics Page', () => {
         await expect(title).toBeVisible();
     })
 
-    // After that we can check other main users flow
+    // After that we can check other main user flows
 
     test('user can use a search from the current page', async ({page}) => {
         const steps = new FreeGraphicsSteps(page)
@@ -54,6 +54,6 @@ test.describe('Free Graphics Page', () => {
         const freePage = new FreeGraphicsPage(page)
         await freePage.loginButton.click()
 
-        await expect(freePage.loginModal).toBeVisible() // The goal to test a page not a login flow
+        await expect(freePage.loginModal).toBeVisible() // The goal is to test the page, not the login flow.
     })
 })
